@@ -64,6 +64,38 @@ ALX Travel App is a Django-based web application designed to facilitate property
 
 9. Access the swagger documentation at `http://localhost:8000/swagger/`.
 
+10. Background Task Management with Celery
+
+### Setup
+
+1. Install Celery:
+
+   ```bash
+   pip install celery
+   ```
+
+i. Install RabbitMQ:
+Follow the installation instructions from the RabbitMQ website.
+
+ii. Configure Celery in settings.py
+
+```bash
+CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_RESULT_BACKEND = 'django-db'
+```
+
+iii. Create a celery.py file in the project root and update **init**.py to load the Celery app.
+
+iv. Define the email task in listings/tasks.py.
+
+v. Trigger the email task in listings/views.py.
+
+## Running Celery Worker
+
+```bash
+celery -A alx_travel_app worker --loglevel=info
+```
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.

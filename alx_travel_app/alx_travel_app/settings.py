@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'listings',
     'drf_yasg',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,10 @@ LOGGING = {
     },
 }
 
+
+# Celery settings
+CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_RESULT_BACKEND = 'django-db'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
