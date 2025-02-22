@@ -31,8 +31,12 @@ SECRET_KEY = 'django-insecure-h*$j8)4a$m(t7iuj6jdt4c63y%6_iel*3i#zs(00^=t65r2+$n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-                 '54.221.48.84', 'ec2-54-221-48-84.compute-1.amazonaws.com']
+# Update ALLOWED_HOSTS with your new EC2 IP/DNS
+ALLOWED_HOSTS = [
+    '3.83.103.128',
+    'ec2-3-83-103-128.compute-1.amazonaws.com',
+    'localhost'
+]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -123,6 +127,8 @@ LOGGING = {
 # Celery settings
 CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
