@@ -40,6 +40,10 @@ ALLOWED_HOSTS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://34.226.122.18:8000",
+    "http://34.226.122.18",
+    "http://ec2-34-226-122-18.compute-1.amazonaws.com:8000",
+    "http://ec2-34-226-122-18.compute-1.amazonaws.com",
 ]
 
 # Application definition
@@ -123,6 +127,25 @@ LOGGING = {
     },
 }
 
+
+# Allow access to Swagger without authentication
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    },
+    'LOGIN_URL': 'rest_framework:login',
+    'LOGOUT_URL': 'rest_framework:logout',
+    'USE_SESSION_AUTH': False  # Disable Django session auth for Swagger
+}
+
+# Allow public access to API docs
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 # Celery settings
 CELERY_BROKER_URL = 'amqp://localhost'
