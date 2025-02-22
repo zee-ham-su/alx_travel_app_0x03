@@ -33,8 +33,8 @@ DEBUG = True
 
 # Update ALLOWED_HOSTS with your new EC2 IP/DNS
 ALLOWED_HOSTS = [
-    '3.83.103.128',
-    'ec2-3-83-103-128.compute-1.amazonaws.com',
+    '34.226.122.18',
+    'ec2-34-226-122-18.compute-1.amazonaws.com',
     'localhost'
 ]
 
