@@ -40,6 +40,10 @@ ALLOWED_HOSTS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://34.226.122.18:8000",
+    "http://34.226.122.18",
+    "http://ec2-34-226-122-18.compute-1.amazonaws.com:8000",
+    "http://ec2-34-226-122-18.compute-1.amazonaws.com",
 ]
 
 # Application definition
