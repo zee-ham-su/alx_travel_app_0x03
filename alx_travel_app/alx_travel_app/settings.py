@@ -46,6 +46,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://ec2-34-226-122-18.compute-1.amazonaws.com",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://34.226.122.18",
+    "http://ec2-34-226-122-18.compute-1.amazonaws.com",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -63,6 +68,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -70,7 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'alx_travel_app.urls'
@@ -189,6 +195,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
