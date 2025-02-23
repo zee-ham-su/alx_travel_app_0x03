@@ -31,6 +31,9 @@ SECRET_KEY = 'django-insecure-h*$j8)4a$m(t7iuj6jdt4c63y%6_iel*3i#zs(00^=t65r2+$n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+USE_X_FORWARDED_HOST = True
+
 # Update ALLOWED_HOSTS with your new EC2 IP/DNS
 ALLOWED_HOSTS = [
     '34.226.122.18',
@@ -51,6 +54,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://ec2-34-226-122-18.compute-1.amazonaws.com",
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -195,7 +200,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
